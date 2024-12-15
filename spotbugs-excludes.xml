@@ -8,6 +8,10 @@
         <Package name="~backend\.academy\.samples.*"/>
     </Match>
 
+    <Match>
+        <Package name="~.*\.jmh_generated" />
+    </Match>
+
     <!-- Find Sec Bugs
         see: https://find-sec-bugs.github.io/bugs.htm
     -->
