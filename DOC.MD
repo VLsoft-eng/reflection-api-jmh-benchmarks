@@ -13,4 +13,4 @@
 | Прямой доступ     | avgt  | 0,459     |
 | LambdaMetaFactory | avgt  | 0,939     |
 | MethodHandlers    | avgt  | 4,962     |
-| Reflection        | avgt  | 5,412     |
+| Method            | avgt  | 5,412     |
