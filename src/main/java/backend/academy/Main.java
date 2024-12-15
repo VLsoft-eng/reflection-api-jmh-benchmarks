@@ -14,7 +14,7 @@ public class Main {
     @SuppressWarnings("MagicNumberCheck")
     public static void main(String[] args) throws RunnerException {
         Options options = new OptionsBuilder()
-            .include(Benchmark.class.getSimpleName())
+            .include(ReflectionBenchmark.class.getSimpleName())
             .shouldFailOnError(true)
             .shouldDoGC(true)
             .mode(Mode.AverageTime)

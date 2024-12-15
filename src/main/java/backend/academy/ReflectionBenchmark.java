@@ -15,7 +15,7 @@ import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.infra.Blackhole;
 
 @State(Scope.Thread)
-public class Benchmark {
+public class ReflectionBenchmark {
     private Student student;
     private Method method;
     private MethodHandle handle;
@@ -45,25 +45,25 @@ public class Benchmark {
     }
 
     @org.openjdk.jmh.annotations.Benchmark
-    public void directAccess(Blackhole bh) {
+    public void directAccessBenchmark(Blackhole bh) {
         String name = student.name();
         bh.consume(name);
     }
 
     @org.openjdk.jmh.annotations.Benchmark
-    public void reflection(Blackhole bh) throws InvocationTargetException, IllegalAccessException {
+    public void methodBenchmark(Blackhole bh) throws InvocationTargetException, IllegalAccessException {
         String name = (String) method.invoke(student);
         bh.consume(name);
     }
 
     @org.openjdk.jmh.annotations.Benchmark
-    public void methodHandlers(Blackhole bh) throws Throwable {
+    public void methodHandlersBenchmark(Blackhole bh) throws Throwable {
         String name = (String) handle.invoke(student);
         bh.consume(name);
     }
 
     @org.openjdk.jmh.annotations.Benchmark
-    public void lambdaMetaFactory(Blackhole bh) {
+    public void lambdaMetaFactoryBenchmark(Blackhole bh) {
         String name = lambda.get();
         bh.consume(name);
     }
